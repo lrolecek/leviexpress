@@ -1,3 +1,4 @@
+
 /* ---------- styly pro sedadlo  ---------- */
 
 .selected-seat {
@@ -62,5 +63,3 @@
 .seat:not(.seat--occupied):hover .seat__text {
   fill: white;
 }
-
-
