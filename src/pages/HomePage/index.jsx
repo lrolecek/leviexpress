@@ -8,11 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
   const [journey, setJourney] = useState(null);
+  const [userSeat, setUserSeat] = useState(null);
+
   const navigate = useNavigate();
 
   const handleJourneyChange = (data) => {
-    console.log(data);
     setJourney(data);
+    setUserSeat(data.autoSeat);
   }
 
   const handleBuy = () => {
@@ -24,7 +26,7 @@ export const HomePage = () => {
         },
         body: JSON.stringify({
           action: 'create',
-          seat: journey.autoSeat,
+          seat: userSeat,
           journeyId: journey.journeyId,
         }),
       });
@@ -47,7 +49,8 @@ export const HomePage = () => {
             <SeatPicker
               journeyId={journey.journeyId}
               seats={journey.seats}
-              selectedSeat={journey.autoSeat}
+              selectedSeat={userSeat}
+              onSeatSelected={setUserSeat}
             />
 
             <div className="controls container">

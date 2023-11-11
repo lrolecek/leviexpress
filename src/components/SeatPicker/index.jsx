@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import SeatRow from '../SeatRow';
 import './style.css';
 
-export const SeatPicker = ({journeyId, seats, selectedSeat}) => {
+export const SeatPicker = ({journeyId, seats, selectedSeat, onSeatSelected}) => {
   return (
     <div className="seat-picker container">
       <h2>Vyberte sedadlo</h2>
@@ -12,6 +12,7 @@ export const SeatPicker = ({journeyId, seats, selectedSeat}) => {
             key={index}
             row={row}
             rowSelectedSeat={selectedSeat}
+            onSeatSelected={onSeatSelected}
           />
         )}
       </div>
