@@ -60,6 +60,12 @@ select:focus {
   cursor: pointer;
 }
 
+.btn--big {
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+}
+
 .btn:hover {
   background-color: #eb5846;
 }
@@ -67,4 +73,9 @@ select:focus {
 .btn:disabled {
   background-color: lightgray;
   cursor: initial;
+}
+
+.controls {
+  padding: 0 2rem;
+  text-align: center;
 }
